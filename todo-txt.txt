@@ -1,0 +1,6 @@
+// každý se může přidávat úkoly, pokud splněno tak označ před "hotovo -" a já pak oveřím a smažu 
+
+V- dodělat tabulky, nabarvení, ňáký styly bootstrap or vlastní, ta druhá tabulka je "clickable"
+V- Napsat český texty přeložit || vymyslet
+D- přidat tabluku a graf pro senzor pro měření tepu 
+V- najít nějaký nedostatky na stránce - opravit || říct mi

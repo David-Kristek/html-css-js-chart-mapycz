@@ -1,0 +1,102 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="../Lib/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../lib/css/styles.css">
+      <link rel = "icon" href = "../images/logo.png" type = "image/x-icon">
+      <script src="../Lib/jquery/jquery-3.5.1.slim.min.js"></script>
+      <script src="../Lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="https://api.mapy.cz/loader.js"></script>
+      <script type="text/javascript">Loader.load();</script>
+      <script src="../lib/js/TableScript.js"></script>
+      <script src="../lib/moments.js"></script>
+      <script src="../lib/ChartJS/Chart.js"></script>
+      <script src="../lib/ChartJS/Chart.css"></script>
+      <script src="../lib/js/mapa.js"></script>
+      <script src="../lib/js/script.js"></script>
+      <title>Sport app</title>
+   </head>
+   <body onload="InitMap('mapaEle', true, 'table1'); table1('table1'); table2('table2');  graf();">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <a class="navbar-brand pr-4" href="">Bike meter</a>
+         <a class="navbar-brand pr-4" href="#">
+            <img src="../images/logo.png" width="50" height="50" alt="logo" />
+          </a>
+         <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav">
+            <li class="nav-item active font1">
+               <a class="nav-link" href="main.html">Home</a>
+            </li>
+            <li class="nav-item dropdown font1">
+               <a class="nav-link dropdown-toggle" href="about.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               About
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="about.html#us">About us</a>
+                <a class="dropdown-item" href="about.html#web">About our web</a>
+               </div>
+            </li>
+         </ul>
+         <div class="nav-item active ml-auto font2">
+            <a class="nav-link" href="#">Login</a>
+         </div>
+         <div class="nav-item active font2">
+            <a class="nav-link" href="#">Register</a>
+         </div>
+      </nav>
+      <main>
+         <img src="../images/bike4.jpg" alt="picture" class="bike-image">
+         <div class="main-box">
+            <div>
+               <h1>Bike meter</h1>
+               <p style="width: 450px;">mesure your bike skills lorem ipsum blam blkajsd kllkja lorem ipsum blum vaspus</p>
+            </div>
+            <img src="../images/logo.png" width="50" height="50" alt="logo" class="logo-inbox" />
+         </div>
+         <h2 class="heading2">Vaše cesta</h2>
+         <div class="map-box" id="result">
+         <div id="mapaEle" class="mapa"></div>
+         <div style="width: 40%;">
+         <table class="table table-hover table1" id="table1">
+             <thead style="background-color: rgb(58, 55, 55); color: white;">
+                 <tr> 
+                     <td>ID</td>
+                     <td>lat</td>
+                     <td>len</td>
+                 </tr>
+                 <tbody id="table1Body"></tbody>
+             </thead>
+         </table>
+         <div class="d-flex justify-content-center btn-group pl-5 pr-5" role="group" aria-label="Basic example">
+            <button class="btn btn-success" onclick="SetTabPage('table1', 1, 0)">První</button>
+            <button class="btn btn-success" onclick="GetTabPage('table1', 'prev', 0)">Předchozí</button>
+            <button id="table1ActPageBt" class="btn btn-success" onclick="SetTabPage('table1', GetActualPageNumber(0), 0)">0</button>
+            <button class="btn btn-success" onclick="GetTabPage('table1','next', 0)">Další</button>
+            <button class="btn btn-success" id="MaxPageBtExampleTable0" onclick="SetTabPage('table1', GetPageTotalCnt(0, 0), 0)">Poslední</button>
+        </div>
+      </div>
+      </div>
+      <h2 class="graf-heading">Graf</h2>
+      <div class="box-2">
+         <div class="graf">
+            <canvas id="myChart" width="400" height="400"></canvas>
+         </div>
+         <table class="table table-hover table2" id="table2">
+            <thead style="background-color: rgb(58, 55, 55); color: white;">
+                <tr> 
+                    <td>Id události</td>
+                    <td>Jméno události</td>
+                    <td>Barva události</td>
+                    <td>Stav události</td>
+                    <td>Přidat</td>
+                    <td>Smazat </td>
+                </tr>
+                <tbody id="table2Body"></tbody>
+            </thead>
+        </table>
+      </div>
+      </main>
+    </body>
+</html>  
